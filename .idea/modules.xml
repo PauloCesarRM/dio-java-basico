@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/desafios/conta-banco/conta-banco.iml" filepath="$PROJECT_DIR$/desafios/conta-banco/conta-banco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desafios/controle-candidatos/controle-candidatos.iml" filepath="$PROJECT_DIR$/desafios/controle-candidatos/controle-candidatos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desafios/desafio-controle-de-fluxo/desafio-controle-de-fluxo.iml" filepath="$PROJECT_DIR$/desafios/desafio-controle-de-fluxo/desafio-controle-de-fluxo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dio-java-basico.iml" filepath="$PROJECT_DIR$/.idea/dio-java-basico.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estruturas-condicionais/estruturas-condicionais.iml" filepath="$PROJECT_DIR$/estruturas-condicionais/estruturas-condicionais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-anatomia-classes/java-anatomia-classes.iml" filepath="$PROJECT_DIR$/java-anatomia-classes/java-anatomia-classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desafios/metodos-smartv/metodos-smartv.iml" filepath="$PROJECT_DIR$/desafios/metodos-smartv/metodos-smartv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desafios/meu-primeiro-projeto-java/meu-primeiro-projeto-java.iml" filepath="$PROJECT_DIR$/desafios/meu-primeiro-projeto-java/meu-primeiro-projeto-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tipos-e-variaveis/tipos-e-variaveis.iml" filepath="$PROJECT_DIR$/tipos-e-variaveis/tipos-e-variaveis.iml" />
+    </modules>
+  </component>
+</project>
