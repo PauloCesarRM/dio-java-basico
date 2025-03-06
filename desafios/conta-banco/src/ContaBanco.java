@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ContaBanco {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        //TO-DO: Conhecer e importar a classe Scanner
+
         int numero;
         String agencia, nomeDoCliente;
         float saldo;
