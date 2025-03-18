@@ -48,15 +48,14 @@ public class Autodromo {
                 case 5:
                     System.out.println("Velocidade atual: " + jeep.getVelocidade());
                     break;
-//
-//                case 6:
-//                    System.out.println("1 - para virar a esquerda e 2 para virar a direita:");
-//                    jeep.virar();
-//                    break;
-//
-//                case 7:
-//                    System.out.println("Câmbio sequencial, digite 1 para aumentar marcha 2 para diminuir:");
-//                    jeep.trocarMarcha();
+
+                case 6:
+                    jeep.virar();
+                    break;
+
+                case 7:
+                    System.out.println("Câmbio sequencial, digite 1 para aumentar marcha 2 para diminuir:");
+                    jeep.trocarMarcha();
             }
 
 
