@@ -54,7 +54,6 @@ public class Autodromo {
                     break;
 
                 case 7:
-                    System.out.println("Câmbio sequencial, digite 1 para aumentar marcha 2 para diminuir:");
                     jeep.trocarMarcha();
             }
 

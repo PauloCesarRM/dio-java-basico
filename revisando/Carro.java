@@ -63,12 +63,12 @@ public class Carro extends Veiculo {
                 System.out.println("O carro não pode acelerar de ponto morto");
                 return;
             }
-            if (confereVelocidade() > 120){
+            if (confereVelocidade() >= 120){
                 System.out.println("VELOCIDADE MÁXIMA ALCANÇADA!");
                 return;
             }
             setVelocidade(getVelocidade() + 1);
-            System.out.println("Carro acelerando");
+            System.out.println("Carro acelerando. Velocidade: " + getVelocidade() + " km/h");
         }else {
             System.out.println("O veículo precisa estar ligado para acelerar");
         }
@@ -81,7 +81,7 @@ public class Carro extends Veiculo {
                 return;
             }
             setVelocidade(getVelocidade() - 1);
-            System.out.println("Carro desacelerando");
+            System.out.println("Carro desacelerando. Velocidade: " + getVelocidade() + " km/h");
         }else {
             System.out.println("O veículo precisa estar ligado para frear burro");
         }
@@ -107,27 +107,87 @@ public class Carro extends Veiculo {
         }
     }
 
+//    public void trocarMarcha() {
+//        int marcha = scan.nextInt();
+//        if (isLigado()){
+//            if (marcha == 1){
+//                if (getMarcha() >= 6){
+//                    System.out.println("Carro tem apenas 6 Marchas");
+//                    return;
+//                }
+//                setMarcha(getMarcha() + 1);
+//                System.out.println("+1 Marcha: " + getMarcha());
+//            } else if (marcha == 2) {
+//                if (getMarcha() <= 0){
+//                    System.out.println("Carro já está em Neutro");
+//                    return;
+//                }
+//                setMarcha(getMarcha() - 1);
+//                System.out.println("-1 Marcha: " + getMarcha());
+//            }else {
+//                System.out.println("Opção inválida");
+//            }
+//        }
+//        System.out.println("O veículo precisa estar ligado para trocar a marcha");
+//        return;
+//    }
+
     public void trocarMarcha() {
-        int marcha = scan.nextInt();
-        if (isLigado()){
-            if (marcha == 1){
-                if (getMarcha() >= 6){
-                    System.out.println("Carro tem apenas 6 Marchas");
-                    return;
-                }
-                setMarcha(getMarcha() + 1);
-                System.out.println("+1 Marcha: " + getMarcha());
-            } else if (marcha == 2) {
-                if (getMarcha() <= 0){
-                    System.out.println("Carro já está em Neutro");
-                    return;
-                }
-                setMarcha(getMarcha() - 1);
-                System.out.println("-1 Marcha: " + getMarcha());
-            }else {
-                System.out.println("Opção inválida");
-            }
+        if (!isLigado()) {
+            System.out.println("O veículo precisa estar ligado para trocar a marcha.");
+            return;
         }
 
+        System.out.println("Digite 1 para aumentar a marcha ou 2 para reduzir:");
+        int opcao = scan.nextInt();
+
+        int marchaAtual = getMarcha();
+        int novaMarcha = marchaAtual; // Inicialmente, mantém a marcha atual
+        double velocidade = getVelocidade();
+
+        if (opcao == 1) { // Aumentar marcha
+            if (marchaAtual < 6) {
+                novaMarcha = marchaAtual + 1;
+            } else {
+                System.out.println("Já está na marcha máxima (6).");
+                return;
+            }
+        } else if (opcao == 2) { // Reduzir marcha
+            if (marchaAtual > 0) {
+                novaMarcha = marchaAtual - 1;
+            } else {
+                System.out.println("Já está em ponto morto (0).");
+                return;
+            }
+        } else {
+            System.out.println("Opção inválida.");
+            return;
+        }
+
+        // Verifica se a nova marcha é válida para a velocidade atual
+        if (!marchaPermitida(novaMarcha, velocidade)) {
+            System.out.println("Não é possível trocar para a marcha " + novaMarcha +
+                    " na velocidade atual de " + velocidade + " km/h.");
+            return;
+        }
+
+        setMarcha(novaMarcha);
+        System.out.println("Marcha trocada para: " + novaMarcha);
     }
+
+
+    private boolean marchaPermitida(int marcha, double velocidade) {
+        switch (marcha) {
+            case 0: return true;  // Neutro pode ser usado em qualquer velocidade.
+            case 1: return velocidade >= 0 && velocidade <= 20;
+            case 2: return velocidade > 10 && velocidade <= 40;
+            case 3: return velocidade > 20 && velocidade <= 60;
+            case 4: return velocidade > 30 && velocidade <= 80;
+            case 5: return velocidade > 50 && velocidade <= 100;
+            case 6: return velocidade > 70 && velocidade <= 120;
+            default: return false;
+        }
+    }
+
+
 }
