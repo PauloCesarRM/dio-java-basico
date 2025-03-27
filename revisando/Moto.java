@@ -1,12 +1,15 @@
 package revisando;
 
-//public class Moto extends Veiculo {}
+public class Moto extends Veiculo {
 
+    public Moto() {
+        super();
+    }
 
-/*
-* precisa implementar a logica da marcha de acordo com a velocidade
-*precisa descentralizar algumas coisas que so estão em Carro e ficar em veiculo
-* Implementar os metodos especificos do Moto
-*
-*
-* */
+    @Override
+    public void ligar() {
+        super.ligar();
+        System.out.println("Ligando moto");
+    }
+}
+
